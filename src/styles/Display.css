@@ -1,0 +1,10 @@
+.display {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    background-color: rgb(150, 177, 168);
+    height: 125px;
+    width: 100%;
+}
