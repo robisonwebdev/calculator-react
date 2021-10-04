@@ -1,8 +1,12 @@
 import React from 'react';
+import Button from './Button';
+import '../styles/Controls.css';
 
 const Controls = () => {
   return (
-    <div>Controls</div>
+    <div className='controls'>
+      <Button />
+    </div>
   );
 }
 
