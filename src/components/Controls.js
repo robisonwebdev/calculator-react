@@ -3,7 +3,7 @@ import Button from './Button';
 import '../styles/Controls.css';
 
 const Controls = () => {
-  const number = 25;
+  const number = 20;
 
   const placeButtons = [...Array(number)].map(e => <Button />)
 
