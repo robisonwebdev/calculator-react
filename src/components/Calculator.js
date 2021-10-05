@@ -7,6 +7,10 @@ const Calculator = () => {
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
   const [display, setDisplay] = useState(0);
 
+  const handleControlInput = (input) => {
+    setDisplay(input);
+  }
+
   return (
     <div className='calculator'>
       <Display
@@ -14,6 +18,7 @@ const Calculator = () => {
       />
       <Controls
         buttons={calculatorButtons}
+        handleControlInput={handleControlInput}
       />
     </div>
   );
