@@ -5,6 +5,7 @@ import '../styles/Calculator.css';
 
 const Calculator = () => {
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
+  const [display, setDisplay] = useState('');
 
   return (
     <div className='calculator'>
