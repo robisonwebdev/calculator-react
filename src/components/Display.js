@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/Display.css';
 
-const Display = () => {
+const Display = ({ display }) => {
   return (
-    <div className='display'>Display</div>
+    <div className='display'>
+      {display}
+    </div>
   );
 }
 
