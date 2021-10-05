@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './Button';
 import '../styles/Controls.css';
 
-const Controls = () => {
-  const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
-  const placeButtons = calculatorButtons.map(button => <Button key={button.name} btn={button.button} />)
+const Controls = ({ buttons }) => {  
+  const placeButtons = buttons.map(button => <Button key={button.name} btn={button.button} />)
 
   return (
     <div className='controls'>
