@@ -9,7 +9,9 @@ const Calculator = () => {
 
   return (
     <div className='calculator'>
-      <Display />
+      <Display
+        display={display}
+      />
       <Controls
         buttons={calculatorButtons}
       />
