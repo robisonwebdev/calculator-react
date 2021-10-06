@@ -6,6 +6,9 @@ import '../styles/Calculator.css';
 const Calculator = () => {
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
   const [display, setDisplay] = useState('0');
+  const [operator, setOperator] = useState(null);
+  const [valueOne, setValueOne] = useState(0);
+  const [valueTwo, setValueTwo] = useState(0);
 
   const handleControlInput = (value) => {
     const number = value.toString();
