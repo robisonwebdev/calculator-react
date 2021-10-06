@@ -5,28 +5,15 @@ const calculatorButtons = [
     },
     {
         name: 'plusMinus',
-        button: '±',
-        plusNegative: function(num) {
-            return (-1 * num);
-        }
+        button: '±'
     },
     {
         name: 'percent',
-        button: '%',
-        percentage: function(num) {
-            return (num/100);
-        }
+        button: '%'
     },
     {
         name: 'divide',
-        button: '÷',
-        divide: function(num1, num2) {
-            if (num2 === 0) {
-                return null;
-            }
-
-            return num1 / num2;
-        }
+        button: '÷'
     },
     {
         name: 'seven',
@@ -45,10 +32,7 @@ const calculatorButtons = [
     },
     {
         name: 'times',
-        button: '×',
-        multiple: function(num1, num2) {
-            return num1 * num2;
-        }
+        button: '×'
     },
     {
         name: 'four',
@@ -67,10 +51,7 @@ const calculatorButtons = [
     },
     {
         name: 'plus',
-        button: '+',
-        add: function(num1, num2) {
-            return num1 + num2;
-        }
+        button: '+'
     },
     {
         name: 'one',
@@ -89,10 +70,7 @@ const calculatorButtons = [
     },
     {
         name: 'minus',
-        button: '-',
-        subtract: function(num1, num2) {
-            return num1 - num2;
-        }
+        button: '-'
     },
     {
         name: 'zero',
