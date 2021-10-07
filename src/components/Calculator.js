@@ -22,8 +22,10 @@ const Calculator = () => {
       } else {
         setDisplay(display + number);
       }
-    } else {
-      console.log('No input!');
+    }
+
+    if (value === '+' || value === '-' || value === '×' || value === '/') {
+      setDisplay(`${display} ${value} `);
     }
     // setDisplay(input);
   }
