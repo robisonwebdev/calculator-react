@@ -13,7 +13,8 @@ const calculatorButtons = [
     },
     {
         name: 'divide',
-        button: '÷'
+        button: '÷',
+        value: '/'
     },
     {
         name: 'seven',
@@ -32,7 +33,8 @@ const calculatorButtons = [
     },
     {
         name: 'times',
-        button: '×'
+        button: '×',
+        value: '×'
     },
     {
         name: 'four',
@@ -51,7 +53,8 @@ const calculatorButtons = [
     },
     {
         name: 'plus',
-        button: '+'
+        button: '+',
+        value: '+'
     },
     {
         name: 'one',
@@ -70,7 +73,8 @@ const calculatorButtons = [
     },
     {
         name: 'minus',
-        button: '-'
+        button: '-',
+        value: '-'
     },
     {
         name: 'zero',
