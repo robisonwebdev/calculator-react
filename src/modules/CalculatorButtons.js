@@ -2,6 +2,7 @@ const calculatorButtons = [
     {
         name: 'clear',
         button: 'C',
+        value: 'clear'
     },
     {
         name: 'plusMinus',
