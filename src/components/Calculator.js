@@ -25,6 +25,8 @@ const Calculator = () => {
 
     if (value === '+' || value === '-' || value === '×' || value === '/') {
       setStoredValues(arr => [...arr, value]);
+    } else if (value === '=') {
+      setCalculate(true);
     } else {
       updateLastValue(number);
     }
