@@ -91,7 +91,8 @@ const calculatorButtons = [
     },
     {
         name: 'equal',
-        button: '='
+        button: '=',
+        value: '='
     }
 
 ];
