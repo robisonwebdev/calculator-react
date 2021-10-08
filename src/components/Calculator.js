@@ -7,7 +7,7 @@ import '../styles/Calculator.css';
 const Calculator = () => {
   const [calculate, setCalculate] = useState(false);
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
-  const [display, setDisplay] = useState('0');
+  const [display, setDisplay] = useState();
   const [operator, setOperator] = useState(null);
   const [storedValues, setStoredValues] = useState([0]);
   const [sum, setSum] = useState(0);
@@ -21,14 +21,24 @@ const Calculator = () => {
   }, [calculate])
 
   const handleControlInput = (value) => {
-    const number = value.toString();   
+    const number = value.toString();
 
-    if (value === '+' || value === '-' || value === '×' || value === '/') {
-      setStoredValues(arr => [...arr, value]);
-    } else if (value === '=') {
-      setCalculate(true);
-    } else {
-      updateLastValue(number);
+    switch (value) {
+      case '+':
+      case '-':
+      case '×':
+      case '/':
+        setStoredValues(arr => [...arr, value]);
+        break;
+      case '=':
+        setCalculate(true);
+        break;
+      case 'clear':
+        resetCalculator();
+        break;
+      default:
+        updateLastValue(number);
+        break;
     }
   }
 
@@ -47,6 +57,11 @@ const Calculator = () => {
         setSum(math.divide(valueOne, valueTwo));
         break;
     }
+  }
+
+  const resetCalculator = () => {
+    setCalculate(false);
+    setStoredValues([0]);
   }
 
   const updateLastValue = (value) => {
