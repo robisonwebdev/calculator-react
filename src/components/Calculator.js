@@ -17,7 +17,7 @@ const Calculator = () => {
   }, [storedValues]);
 
   useEffect(() => {
-
+    console.log('Calculate: ', calculate);
   }, [calculate])
 
   const handleControlInput = (value) => {
