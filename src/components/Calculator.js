@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Display from './Display';
 import Controls from './Controls';
 import math from '../modules/MathOperations';
@@ -8,26 +8,21 @@ const Calculator = () => {
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
   const [display, setDisplay] = useState('0');
   const [operator, setOperator] = useState(null);
-  const [storedValues, setStoredValues] = useState([]);
+  const [storedValues, setStoredValues] = useState([0]);
   const [sum, setSum] = useState(0);
-  const [valueOne, setValueOne] = useState(0);
-  const [valueTwo, setValueTwo] = useState(0);
+
+  useEffect(() => {
+    setDisplay(storedValues);
+  }, [storedValues])
 
   const handleControlInput = (value) => {
-    const number = value.toString();
-
-    if (typeof(value) === 'number') {
-      if (display === '0') {
-        setDisplay(number);
-      } else {
-        setDisplay(display + number);
-      }
-    }
+    const number = value.toString();   
 
     if (value === '+' || value === '-' || value === '×' || value === '/') {
-      setDisplay(`${display} ${value} `);
+      setStoredValues(arr => [...arr, value]);
+    } else {
+      updateLastValue(number);
     }
-    // setDisplay(input);
   }
 
   const handleOperator = (valueOne, operator, valueTwo) => {
@@ -47,8 +42,24 @@ const Calculator = () => {
     }
   }
 
+  const updateLastValue = (value) => {
+    const newArray = [...storedValues];
+    const lastItem = newArray.at(-1);
+
+    if (lastItem === 0) {
+      newArray[0] = value;
+      setStoredValues(newArray);
+    } else if (lastItem === '+' || lastItem === '-' || lastItem === '×' || lastItem === '/')  {
+      setStoredValues(arr => [...arr, value]);
+    } else {
+      newArray[newArray.length - 1] = lastItem + value;
+      setStoredValues(newArray);
+    }
+  }
+
   return (
     <div className='calculator'>
+      {console.log(storedValues)}
       <Display
         display={display}
       />
