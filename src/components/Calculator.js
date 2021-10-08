@@ -5,6 +5,7 @@ import math from '../modules/MathOperations';
 import '../styles/Calculator.css';
 
 const Calculator = () => {
+  const [calculate, setCalculate] = useState(false);
   const [calculatorButtons, setCalculatorButtons] = useState(require('../modules/CalculatorButtons'));
   const [display, setDisplay] = useState('0');
   const [operator, setOperator] = useState(null);
@@ -13,7 +14,11 @@ const Calculator = () => {
 
   useEffect(() => {
     setDisplay(storedValues);
-  }, [storedValues])
+  }, [storedValues]);
+
+  useEffect(() => {
+
+  }, [calculate])
 
   const handleControlInput = (value) => {
     const number = value.toString();   
