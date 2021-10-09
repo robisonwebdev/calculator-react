@@ -29,15 +29,17 @@ const Calculator = () => {
       case '×':
       case '/':
         setStoredValues(arr => [...arr, value]);
+        setCalculate(false);
         break;
       case '=':
-        setCalculate(true);
+        console.log('calculate', calculate);
         break;
       case 'clear':
         resetCalculator();
         break;
       default:
         updateLastValue(number);
+        setCalculate(true);
         break;
     }
   }
