@@ -34,8 +34,8 @@ const calculatorButtons = [
     },
     {
         name: 'times',
-        button: '×',
-        value: '×'
+        button: 'x',
+        value: '*'
     },
     {
         name: 'four',
