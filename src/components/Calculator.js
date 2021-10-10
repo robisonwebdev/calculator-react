@@ -32,6 +32,11 @@ const Calculator = () => {
         let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '/', parseFloat(storedValues[operatorPosition + 1]));
 
         newArray.splice(operatorPosition -1, 3, newValue);
+      } else if (storedValues.findIndex(element => element === '+') !== -1) {
+        let operatorPosition = storedValues.findIndex(element => element === '+');
+        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '+', parseFloat(storedValues[operatorPosition + 1]));
+
+        newArray.splice(operatorPosition -1, 3, newValue);
       }
     }
     
