@@ -19,33 +19,18 @@ const Calculator = () => {
   }, [calculate])
 
   const handleCalculation = () => {
+    const orderOfOperation = ['*', '/', '+', '-'];
     let newArray = storedValues;
 
-    while (storedValues.length !== 1) {
-      if (storedValues.findIndex(element => element === '*') !== -1) {
-        let operatorPosition = storedValues.findIndex(element => element === '*');
-        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '*', parseFloat(storedValues[operatorPosition + 1]));
-
-        newArray.splice(operatorPosition -1, 3, newValue);
-      } else if (storedValues.findIndex(element => element === '/') !== -1) {
-        let operatorPosition = storedValues.findIndex(element => element === '/');
-        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '/', parseFloat(storedValues[operatorPosition + 1]));
-
-        newArray.splice(operatorPosition -1, 3, newValue);
-      } else if (storedValues.findIndex(element => element === '+') !== -1) {
-        let operatorPosition = storedValues.findIndex(element => element === '+');
-        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '+', parseFloat(storedValues[operatorPosition + 1]));
-
-        newArray.splice(operatorPosition -1, 3, newValue);
-      } else if (storedValues.findIndex(element => element === '-') !== -1) {
-        let operatorPosition = storedValues.findIndex(element => element === '-');
-        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), '-', parseFloat(storedValues[operatorPosition + 1]));
+    orderOfOperation.forEach(operation => {
+      while (storedValues.includes(operation)) {
+        let operatorPosition = storedValues.findIndex(op => op === operation);
+        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), operation, parseFloat(storedValues[operatorPosition + 1]));
 
         newArray.splice(operatorPosition -1, 3, newValue)
+        setStoredValues(newArray);
       }
-    }
-    
-    setStoredValues(newArray);
+    });
   }
 
   const handleControlInput = (value) => {
