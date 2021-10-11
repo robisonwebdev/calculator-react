@@ -24,10 +24,10 @@ const Calculator = () => {
 
     orderOfOperation.forEach(operation => {
       while (storedValues.includes(operation)) {
-        let operatorPosition = storedValues.findIndex(op => op === operation);
-        let newValue = handleOperator(parseFloat(storedValues[operatorPosition -1]), operation, parseFloat(storedValues[operatorPosition + 1]));
+        let operatorPosition = storedValues.findIndex(operator => operator === operation);
+        let getSum = handleOperator(parseFloat(storedValues[operatorPosition -1]), operation, parseFloat(storedValues[operatorPosition + 1]));
 
-        newArray.splice(operatorPosition -1, 3, newValue)
+        newArray.splice(operatorPosition -1, 3, getSum)
         setStoredValues(newArray);
       }
     });
