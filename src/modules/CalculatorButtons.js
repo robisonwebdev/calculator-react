@@ -84,7 +84,8 @@ const calculatorButtons = [
     },
     {
         name: 'decimal',
-        button: '.'
+        button: '.',
+        value: '.'
     },
     {
         name: 'backspace',
