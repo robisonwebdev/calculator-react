@@ -82,15 +82,32 @@ const Calculator = () => {
     const newArray = [...storedValues];
     const lastItem = newArray.at(-1);
 
-    if (lastItem === 0) {
-      newArray[0] = value;
-      setStoredValues(newArray);
-    } else if (lastItem === '+' || lastItem === '-' || lastItem === '*' || lastItem === '/')  {
-      setStoredValues(arr => [...arr, value]);
-    } else {
-      newArray[newArray.length - 1] = lastItem + value;
-      setStoredValues(newArray);
-    }
+    switch (lastItem) {
+      case 0:
+        newArray[0] = value;
+        setStoredValues(newArray);
+        break;
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        setStoredValues(arr => [...arr, value]);
+        break;
+      default:
+        newArray[newArray.length - 1] = lastItem + value;
+        setStoredValues(newArray);
+        break;
+    };
+
+    // if (lastItem === 0) {
+    //   newArray[0] = value;
+    //   setStoredValues(newArray);
+    // } else if (lastItem === '+' || lastItem === '-' || lastItem === '*' || lastItem === '/')  {
+    //   setStoredValues(arr => [...arr, value]);
+    // } else {
+    //   newArray[newArray.length - 1] = lastItem + value;
+    //   setStoredValues(newArray);
+    // }
   }
 
   return (
