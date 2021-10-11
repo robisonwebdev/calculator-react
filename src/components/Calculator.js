@@ -28,9 +28,10 @@ const Calculator = () => {
         let getSum = handleOperator(parseFloat(storedValues[operatorPosition -1]), operation, parseFloat(storedValues[operatorPosition + 1]));
 
         newArray.splice(operatorPosition -1, 3, getSum)
-        setStoredValues(newArray);
       }
     });
+    
+    setStoredValues([...newArray]);
   }
 
   const handleControlInput = (value) => {
