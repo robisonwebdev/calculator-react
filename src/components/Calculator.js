@@ -7,6 +7,7 @@ import '../styles/Calculator.css';
 const Calculator = () => {
   const [calculate, setCalculate] = useState(false);
   const [calculatorButtons] = useState(require('../modules/CalculatorButtons'));
+  const [decimal, setDecimal] = useState(true);
   const [display, setDisplay] = useState();
   const [storedValues, setStoredValues] = useState([0]);
 
@@ -35,8 +36,6 @@ const Calculator = () => {
   }
 
   const handleControlInput = (value) => {
-    const number = value.toString();
-
     switch (value) {
       case '+':
       case '-':
@@ -53,8 +52,13 @@ const Calculator = () => {
       case 'clear':
         resetCalculator();
         break;
+      case '.':
+        if (decimal) {
+          updateLastValue(value);
+        }
+        break;
       default:
-        updateLastValue(number);
+        updateLastValue(value);
         setCalculate(true);
         break;
     }
@@ -92,22 +96,20 @@ const Calculator = () => {
       case '*':
       case '/':
         setStoredValues(arr => [...arr, value]);
-        break;
+        setDecimal(true);
+        break;         
       default:
-        newArray[newArray.length - 1] = lastItem + value;
-        setStoredValues(newArray);
-        break;
+        if (value === '.') {
+          newArray[newArray.length - 1] = lastItem + value;
+          setDecimal(false);
+          setStoredValues(newArray);
+          break;
+        } else {
+          newArray[newArray.length - 1] = lastItem + value;
+          setStoredValues(newArray);
+          break
+        };
     };
-
-    // if (lastItem === 0) {
-    //   newArray[0] = value;
-    //   setStoredValues(newArray);
-    // } else if (lastItem === '+' || lastItem === '-' || lastItem === '*' || lastItem === '/')  {
-    //   setStoredValues(arr => [...arr, value]);
-    // } else {
-    //   newArray[newArray.length - 1] = lastItem + value;
-    //   setStoredValues(newArray);
-    // }
   }
 
   return (
