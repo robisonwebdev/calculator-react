@@ -100,15 +100,12 @@ const Calculator = () => {
         break;         
       default:
         if (value === '.') {
-          newArray[newArray.length - 1] = lastItem + value;
           setDecimal(false);
-          setStoredValues(newArray);
-          break;
-        } else {
-          newArray[newArray.length - 1] = lastItem + value;
-          setStoredValues(newArray);
-          break
-        };
+        }
+
+        newArray[newArray.length - 1] = lastItem + value;
+        setStoredValues(newArray);
+        break
     };
   }
 
