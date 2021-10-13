@@ -15,9 +15,22 @@ const Calculator = () => {
   }, [inputs])
 
   const userInput = (input) => {
-    setInputs(input);
+    // Number Inputs
+    if (typeof input === 'number') {
+      const number = input.toString();
+      const updatedInputs = [...inputs];
+      const getLastInput = inputs.at(-1);
+
+      updatedInputs[updatedInputs.length - 1] = getLastInput + number;
+      setInputs(updatedInputs);
+    }
+
+    // Non-number Inputs
+    if (typeof input !== 'number') {
+      console.log('Non-number input');
+    }
   }
-  
+
   return (
     <div className='calculator'>
       <Display
