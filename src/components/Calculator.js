@@ -33,8 +33,12 @@ const Calculator = () => {
     const updatedInputs = [...inputs];
     const getLastInput = inputs.at(-1);
 
-    updatedInputs[updatedInputs.length - 1] = getLastInput + number;
-    setInputs(updatedInputs);
+    if (inputs.length === 1 && getLastInput === '0') {
+      setInputs(number);
+    } else {
+      updatedInputs[updatedInputs.length - 1] = getLastInput + number;
+      setInputs(updatedInputs);
+    }
   }
 
   const userInput = (input) => {
