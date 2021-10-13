@@ -26,6 +26,13 @@ const Calculator = () => {
       setInputs(updatedInputs);
       setDecimal(false);
     }
+
+    // Operations input
+    if (input === '/' || input === '*' || input === '-' || input === '+') {
+      updatedInputs.push(input);
+      setInputs(updatedInputs);
+      setDecimal(true);
+    }
   }
 
   const numberInputs = (input) => {
