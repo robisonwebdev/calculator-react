@@ -9,6 +9,15 @@ const Calculator = () => {
   const [display, setDisplay] = useState();
   const [inputs, setInputs] = useState(['0']);
 
+  // Updates display when inputs changes.
+  useEffect(() => {
+    setDisplay(inputs);
+  }, [inputs])
+
+  const userInput = (input) => {
+    setInputs(input);
+  }
+  
   return (
     <div className='calculator'>
       <Display
@@ -16,6 +25,7 @@ const Calculator = () => {
       />
       <Controls
         buttons={calculatorButtons}
+        userInput={userInput}
       />
     </div>
   );
