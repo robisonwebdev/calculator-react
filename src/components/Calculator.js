@@ -14,21 +14,22 @@ const Calculator = () => {
     setDisplay(inputs);
   }, [inputs])
 
+  const nonNumberInputs = (input) => {
+    console.log('Non-number input');
+  }
+
+  const numberInputs = (input) => {
+    const number = input.toString();
+    const updatedInputs = [...inputs];
+    const getLastInput = inputs.at(-1);
+
+    updatedInputs[updatedInputs.length - 1] = getLastInput + number;
+    setInputs(updatedInputs);
+  }
+
   const userInput = (input) => {
-    // Number Inputs
-    if (typeof input === 'number') {
-      const number = input.toString();
-      const updatedInputs = [...inputs];
-      const getLastInput = inputs.at(-1);
-
-      updatedInputs[updatedInputs.length - 1] = getLastInput + number;
-      setInputs(updatedInputs);
-    }
-
-    // Non-number Inputs
-    if (typeof input !== 'number') {
-      console.log('Non-number input');
-    }
+    // Ternary to determine which function to run based on input type.
+    return typeof input === 'number' ? numberInputs(input) : nonNumberInputs(input);
   }
 
   return (
