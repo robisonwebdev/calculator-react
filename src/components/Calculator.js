@@ -9,6 +9,7 @@ const Calculator = () => {
   const [decimal, setDecimal] = useState(true);
   const [display, setDisplay] = useState();
   const [inputs, setInputs] = useState(['0']);
+  const [operator, setOperator] = useState(true);
 
   // Updates display when inputs changes.
   useEffect(() => {
@@ -28,10 +29,11 @@ const Calculator = () => {
     }
 
     // Operations input
-    if (input === '/' || input === '*' || input === '-' || input === '+') {
+    if ((input === '/' || input === '*' || input === '-' || input === '+') && operator) {
       updatedInputs.push(input);
       updatedInputs.push('');
       setInputs(updatedInputs);
+      setOperator(false);
       setDecimal(true);
     }
   }
@@ -46,6 +48,7 @@ const Calculator = () => {
     } else {
       updatedInputs[updatedInputs.length - 1] = getLastInput + number;
       setInputs(updatedInputs);
+      setOperator(true);
     }
   }
 
