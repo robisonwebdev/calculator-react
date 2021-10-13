@@ -30,6 +30,7 @@ const Calculator = () => {
     // Operations input
     if (input === '/' || input === '*' || input === '-' || input === '+') {
       updatedInputs.push(input);
+      updatedInputs.push('');
       setInputs(updatedInputs);
       setDecimal(true);
     }
