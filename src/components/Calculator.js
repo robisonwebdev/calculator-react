@@ -6,16 +6,26 @@ import '../styles/Calculator.css';
 
 const Calculator = () => {
   const [calculatorButtons] = useState(require('../modules/CalculatorButtons'));
+  const [decimal, setDecimal] = useState(true);
   const [display, setDisplay] = useState();
   const [inputs, setInputs] = useState(['0']);
 
   // Updates display when inputs changes.
   useEffect(() => {
     setDisplay(inputs);
+    console.log('inputs:', inputs);
   }, [inputs])
 
   const nonNumberInputs = (input) => {
-    console.log('Non-number input');
+    const updatedInputs = [...inputs];
+    const getLastInput = inputs.at(-1)
+
+    // Decimal input
+    if (input === '.' && decimal === true) {
+      updatedInputs[updatedInputs.length - 1] = getLastInput + input;
+      setInputs(updatedInputs);
+      setDecimal(false);
+    }
   }
 
   const numberInputs = (input) => {
