@@ -53,9 +53,9 @@ const calculatorButtons = [
         value: '6'
     },
     {
-        name: 'plus',
-        button: '+',
-        value: '+'
+        name: 'minus',
+        button: '-',
+        value: '-'
     },
     {
         name: 'one',
@@ -73,9 +73,9 @@ const calculatorButtons = [
         value: '3'
     },
     {
-        name: 'minus',
-        button: '-',
-        value: '-'
+        name: 'plus',
+        button: '+',
+        value: '+'
     },
     {
         name: 'zero',
