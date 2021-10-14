@@ -11,7 +11,8 @@ const calculatorButtons = [
     },
     {
         name: 'percent',
-        button: '%'
+        button: '%',
+        value: '%'
     },
     {
         name: 'divide',
@@ -90,7 +91,8 @@ const calculatorButtons = [
     },
     {
         name: 'backspace',
-        button: '←'
+        button: '←',
+        value: 'back'
     },
     {
         name: 'equal',
