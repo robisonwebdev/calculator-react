@@ -17,9 +17,28 @@ const Calculator = () => {
     console.log('inputs:', inputs);
   }, [inputs])
 
+  // Update inputs to zero, if length is 1 and empty string
+  useEffect(() => {
+    if (inputs.length === 1 && inputs[0] === '') {
+      setInputs(['0']);
+    }
+  }, [inputs])
+
   const nonNumberInputs = (input) => {
     const updatedInputs = [...inputs];
     const getLastInput = inputs.at(-1)
+
+    // Back Button
+    if (input === 'back') {
+      if (getLastInput === '') {
+        updatedInputs.splice(-2, 2);
+        setOperator(true);
+      } else {
+        updatedInputs[updatedInputs.length - 1] = getLastInput.slice(0, -1);
+      }
+      
+      setInputs(updatedInputs)
+    }
 
     // Clear Button
     if (input === 'clear') {
