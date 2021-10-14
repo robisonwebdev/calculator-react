@@ -46,8 +46,9 @@ const Calculator = () => {
 
     // Plus/Minus Button
     if (input === '-1') {
-      const newValue = math.plusNegative(getLastInput).toString()
-      updatedInputs[updatedInputs.length - 1] = newValue;
+      const newValue = math.plusNegative(getLastInput);
+
+      updatedInputs[updatedInputs.length - 1] = newValue.toString();
       setInputs(updatedInputs);
     }
   }
