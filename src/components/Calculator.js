@@ -21,14 +21,21 @@ const Calculator = () => {
     const updatedInputs = [...inputs];
     const getLastInput = inputs.at(-1)
 
-    // Decimal input
+    // Clear Button
+    if (input === 'clear') {
+      setDecimal(true);
+      setInputs(['0']);
+      setOperator(false);
+    }
+
+    // Decimal Button
     if (input === '.' && decimal === true) {
       updatedInputs[updatedInputs.length - 1] = getLastInput + input;
       setInputs(updatedInputs);
       setDecimal(false);
     }
 
-    // Operations input
+    // Operation Buttons
     if ((input === '/' || input === '*' || input === '-' || input === '+') && operator) {
       updatedInputs.push(input);
       updatedInputs.push('');
