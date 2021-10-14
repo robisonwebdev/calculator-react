@@ -43,6 +43,13 @@ const Calculator = () => {
       setOperator(false);
       setDecimal(true);
     }
+
+    // Plus/Minus Button
+    if (input === '-1') {
+      const newValue = math.plusNegative(getLastInput).toString()
+      updatedInputs[updatedInputs.length - 1] = newValue;
+      setInputs(updatedInputs);
+    }
   }
 
   const numberInputs = (input) => {
