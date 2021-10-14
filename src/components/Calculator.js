@@ -44,7 +44,15 @@ const Calculator = () => {
       setDecimal(true);
     }
 
-    // Plus/Minus Button
+    // Percentage Button
+    if (input === '%') {
+      const newValue = math.percentage(getLastInput);
+
+      updatedInputs[updatedInputs.length - 1] = newValue.toString();
+      setInputs(updatedInputs);
+    }
+
+    // Plus/Negative Button
     if (input === '-1') {
       const newValue = math.plusNegative(getLastInput);
 
