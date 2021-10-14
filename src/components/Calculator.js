@@ -9,7 +9,7 @@ const Calculator = () => {
   const [decimal, setDecimal] = useState(true);
   const [display, setDisplay] = useState();
   const [inputs, setInputs] = useState(['0']);
-  const [operator, setOperator] = useState(true);
+  const [operator, setOperator] = useState(false);
 
   // Updates display when inputs changes.
   useEffect(() => {
@@ -52,6 +52,7 @@ const Calculator = () => {
 
     if (inputs.length === 1 && getLastInput === '0') {
       setInputs(number);
+      setOperator(true);
     } else {
       updatedInputs[updatedInputs.length - 1] = getLastInput + number;
       setInputs(updatedInputs);
