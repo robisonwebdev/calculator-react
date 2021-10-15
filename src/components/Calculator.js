@@ -24,11 +24,40 @@ const Calculator = () => {
     }
   }, [inputs])
 
+  const calculate = () => {
+    const orderOfOperations = ['*', '/', '+', '-'];
+    const newArray = [...inputs];
+
+    orderOfOperations.forEach(operation => {
+      while (newArray.includes(operation)) {
+        let operatorPosition = newArray.findIndex(operator => operator === operation);
+        let getSum = handleOperator(parseFloat(newArray[operatorPosition -1]), operation, parseFloat(newArray[operatorPosition + 1]));
+
+        newArray.splice(operatorPosition -1, 3, getSum);
+      }
+    })
+
+    setInputs([`${newArray[0]}`]);
+  }
+
+  const handleOperator = (valueOne, operator, valueTwo) => {
+    switch (operator) {
+      case '+':
+        return math.add(valueOne, valueTwo);
+      case '-':
+        return math.subtract(valueOne, valueTwo);
+      case '*':
+        return math.multiple(valueOne, valueTwo);
+      case '/':
+        return math.divide(valueOne, valueTwo);
+    }
+  }
+
   const nonNumberInputs = (input) => {
     const updatedInputs = [...inputs];
     const getLastInput = inputs.at(-1);
 
-    // Back Button - Start here on decimal
+    // Back Button
     if (input === 'back') {
       if (getLastInput === '') {
         updatedInputs.splice(-2, 2);
@@ -42,6 +71,11 @@ const Calculator = () => {
       }
 
       setInputs(updatedInputs);
+    }
+
+    // Equal Button
+    if (input === 'calculate') {
+      calculate();
     }
 
     // Clear Button
