@@ -9,7 +9,11 @@ const App = () => {
     <div className='app'>
       <Header />
       <Main />
-      <Footer />
+      <Footer
+        address='https://github.com/robisonwebdev'  
+        name='David Robsion'
+        text='Developed by '
+      />
     </div>
   );
 }
