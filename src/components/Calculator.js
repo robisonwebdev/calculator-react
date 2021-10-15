@@ -28,12 +28,16 @@ const Calculator = () => {
     const updatedInputs = [...inputs];
     const getLastInput = inputs.at(-1);
 
-    // Back Button
+    // Back Button - Start here on decimal
     if (input === 'back') {
       if (getLastInput === '') {
         updatedInputs.splice(-2, 2);
         setOperator(true);
       } else {
+        // Check for decimal
+        if (getLastInput.charAt(getLastInput.length - 1) === '.') {
+          setDecimal(true);
+        }
         updatedInputs[updatedInputs.length - 1] = getLastInput.slice(0, -1);
       }
 
