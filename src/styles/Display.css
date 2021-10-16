@@ -6,6 +6,8 @@
     gap: 8px;
 
     background-color: rgb(150, 177, 168);
+    font-size: 18px;
+    padding: 10px;
     height: 125px;
     width: 100%;
 }
