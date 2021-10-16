@@ -7,7 +7,7 @@ import '../styles/Calculator.css';
 const Calculator = () => {
   const [calculatorButtons] = useState(require('../modules/CalculatorButtons'));
   const [decimal, setDecimal] = useState(true);
-  const [display, setDisplay] = useState();
+  const [display, setDisplay] = useState([]);
   const [inputs, setInputs] = useState(['0']);
   const [operator, setOperator] = useState(false);
 
