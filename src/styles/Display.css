@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
+    gap: 8px;
 
     background-color: rgb(150, 177, 168);
     height: 125px;
