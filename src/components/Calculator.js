@@ -14,7 +14,6 @@ const Calculator = () => {
   // Updates display when inputs changes.
   useEffect(() => {
     setDisplay(inputs);
-    console.log('inputs:', inputs);
   }, [inputs])
 
   // Update inputs to zero, if length is 1 and empty string
