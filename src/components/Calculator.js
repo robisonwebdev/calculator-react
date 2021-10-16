@@ -49,6 +49,8 @@ const Calculator = () => {
         return math.multiple(valueOne, valueTwo);
       case '/':
         return math.divide(valueOne, valueTwo);
+      default:
+        return null;
     }
   }
 
