@@ -74,7 +74,7 @@ const Calculator = () => {
     }
 
     // Equal Button
-    if (input === 'calculate') {
+    if (input === 'calculate' && operator === true) {
       calculate();
     }
 
