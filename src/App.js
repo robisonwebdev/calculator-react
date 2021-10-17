@@ -7,7 +7,7 @@ import './styles/App.css';
 const App = () => {
   return (
     <div className='app'>
-      <Header />
+      <Header text='Calculator (React Version)' />
       <Main />
       <Footer
         address='https://github.com/robisonwebdev'  
