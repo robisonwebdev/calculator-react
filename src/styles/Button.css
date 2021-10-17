@@ -4,6 +4,9 @@ button {
     align-items: center;
     justify-content: center;
     
+    background-color: var(--Black);
+    border: 1px solid var(--Grey);
+    color: var(--White);
     cursor: pointer;
     height: 100%;
     width: 100%;
