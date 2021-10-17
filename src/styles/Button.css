@@ -5,9 +5,27 @@ button {
     justify-content: center;
     
     background-color: var(--Black);
-    border: 1px solid var(--Grey);
+    border: none;
     color: var(--White);
     cursor: pointer;
+    font-size: 16px;
     height: 100%;
     width: 100%;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--Grey);
+}
+
+.border-right {
+    border-right: 1px solid var(--Grey);
+}
+
+.button-purple {
+    background-color: var(--Purple);
+}
+
+.button-yellow {
+    background-color: var(--Yellow);
+    color: var(--Black);
 }
