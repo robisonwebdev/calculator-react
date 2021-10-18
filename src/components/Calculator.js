@@ -23,6 +23,48 @@ const Calculator = () => {
     }
   }, [inputs])
 
+  // Keyboard listener
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+ 
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  })
+
+  const handleKeyPress = (event) => {
+    const key = event.key;
+    // Keyboard numbers inputs
+    if (key >= 0 && key <= 9) {
+      numberInputs(key);
+    }
+
+    // Keyboard nonNumber inputs
+    if (key === '/' || key === '*' || key === '+' || key === '-' || key === '.' || key ==='%') {
+      nonNumberInputs(key);
+    }
+
+    // Keyboard backspace
+    if (key === 'Backspace') {
+      nonNumberInputs('back');
+    }
+
+    // Keyboard equal/Enter
+    if (key === '=' || key === 'Enter') {
+      nonNumberInputs('calculate');
+    }
+
+    // Keyboard delete/clear
+    if (key === 'Delete') {
+      nonNumberInputs('clear');
+    }
+
+    // Keyboard plus/Negative
+    if (key === '!') {
+      nonNumberInputs('-1');
+    }
+  }
+
   const calculate = () => {
     const orderOfOperations = ['*', '/', '+', '-'];
     const newArray = [...inputs];
