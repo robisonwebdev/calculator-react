@@ -3,19 +3,19 @@ const calculatorButtons = [
         name: 'clear',
         button: 'C',
         value: 'clear',
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'plusMinus',
         button: '±',
         value: '-1',
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'percent',
         button: '%',
         value: '%',
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'divide',
@@ -27,19 +27,19 @@ const calculatorButtons = [
         name: 'seven',
         button: '7',
         value: 7,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'eight',
         button: '8',
         value: 8,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'nine',
         button: '9',
         value: 9,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'times',
@@ -51,19 +51,19 @@ const calculatorButtons = [
         name: 'four',
         button: '4',
         value: 4,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'five',
         button: '5',
         value: 5,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'six',
         button: '6',
         value: 6,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'minus',
@@ -75,19 +75,19 @@ const calculatorButtons = [
         name: 'one',
         button: '1',
         value: 1,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'two',
         button: '2',
         value: 2,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'three',
         button: '3',
         value: 3,
-        class: 'border-bottom border-right'
+        class: 'border-bottom border-right hover-yellow'
     },
     {
         name: 'plus',
@@ -99,19 +99,19 @@ const calculatorButtons = [
         name: 'zero',
         button: '0',
         value: 0,
-        class: 'border-right'
+        class: 'border-right hover-yellow'
     },
     {
         name: 'decimal',
         button: '.',
         value: '.',
-        class: 'border-right'
+        class: 'border-right hover-yellow'
     },
     {
         name: 'backspace',
         button: '←',
         value: 'back',
-        class: 'border-right'
+        class: 'border-right hover-yellow'
     },
     {
         name: 'equal',
