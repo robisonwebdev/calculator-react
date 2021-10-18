@@ -8,7 +8,7 @@ button {
     border: none;
     color: var(--White);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     height: 100%;
     width: 100%;
 }
@@ -28,4 +28,8 @@ button {
 .button-yellow {
     background-color: var(--Yellow);
     color: var(--Black);
+}
+
+.hover-yellow:hover {
+    color: var(--Yellow);
 }
