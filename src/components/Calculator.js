@@ -182,7 +182,7 @@ const Calculator = () => {
   }
 
   return (
-    <div className='calculator'>
+    <section className='calculator'>
       <Display
         display={display}
       />
@@ -190,7 +190,7 @@ const Calculator = () => {
         buttons={calculatorButtons}
         userInput={userInput}
       />
-    </div>
+    </section>
   );
 }
 
