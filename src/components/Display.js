@@ -29,9 +29,9 @@ const Display = ({ display }) => {
   })
 
   return (
-    <div className='display'>
+    <section className='display'>
       {displayArray}
-    </div>
+    </section>
   );
 }
 
